@@ -1,0 +1,5 @@
+datasources:
+  - name: Prometheus
+    type: prometheus
+    url: ${PROM_URL}
+    access: proxy

@@ -1,0 +1,4 @@
+.env
+*.txt
+alertmanager_malformed.yml
+.history

@@ -1,0 +1,20 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+- ${ALERTING_RULES} 
+
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+     - targets: ['localhost':${PROM_CONT_PORT}]
+  - job_name: raspberrypi
+    scrape_interval: 15s
+    static_configs:
+    - targets: [${RASPBERRYPI_IP}:${NODEEXP_PORT}]
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+      - alertmanager:${AM_CONT_PORT}
