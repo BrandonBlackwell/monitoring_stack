@@ -2,3 +2,6 @@
 *.txt
 alertmanager_malformed.yml
 .history
+grafana/hostname
+grafana/hosts
+grafana/resolv.conf
